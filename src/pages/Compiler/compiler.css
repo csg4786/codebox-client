@@ -1,0 +1,4 @@
+.container::before {
+    display: none;
+}
+

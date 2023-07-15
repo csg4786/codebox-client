@@ -1,0 +1,30 @@
+.custom-div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.custom-div .item {
+    width: 50%;
+}
+
+.custom-link {
+    color: white;
+}
+
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.no-items {
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.no-items h1{
+    width: 100%;
+    text-align: center;
+    color: black;
+}

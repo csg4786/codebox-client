@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Onboarding, Compiler, Profile, Submissions } from "./pages";
+import PrivateComponent from "./components/PrivateComponent";
 import './App.css';
+import Submission from './pages/Submission/Submission';
 
-function App() {
+
+const App = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Onboarding />} />
+          <Route element={<PrivateComponent />}>
+            <Route path="/" element={<Compiler />} />
+            <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/submissions" element={<Submissions />} />
+            <Route path="/user/submission/:id" element={<Submission />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+export default App

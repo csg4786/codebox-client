@@ -33,7 +33,7 @@ const Compiler = () => {
   const handleClick = async (e)=> {
     e.preventDefault();
     try {
-      const res = await axios.post("http://127.0.0.1:5000/api/code/run", task, {
+      const res = await axios.post("https://codebox-server.vercel.app/api/code/run", task, {
         headers:{
           authorization: "Bearer "+JSON.parse(localStorage.getItem("user")).token,
         }
@@ -43,7 +43,7 @@ const Compiler = () => {
 
         const execution = setInterval(async () => {
           
-          const res1 = await axios.get("http://127.0.0.1:5000/api/code/status/"+res.data.taskId, {
+          const res1 = await axios.get("https://codebox-server.vercel.app/api/code/status/"+res.data.taskId, {
             headers:{
               authorization: "Bearer "+JSON.parse(localStorage.getItem("user")).token,
             }

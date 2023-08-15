@@ -214,12 +214,16 @@ body {
 .text.sign-in h2,
 .text.sign-in p,
 .img.sign-in img {
+    width: 300px;
+    height: 200px;
     transform: translateX(-250%);
 }
 
 .text.sign-up h2,
 .text.sign-up p,
 .img.sign-up img {
+    width: 300px;
+    height: 200px;
     transform: translateX(250%);
 }
 

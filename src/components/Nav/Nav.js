@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import Swal from 'sweetalert2'
 import './nav.css';
-
+import logo from "../../assets/codebox-low-resolution-logo-black-on-transparent-background.png";
 
 const Nav = () => {
 
@@ -39,8 +39,8 @@ const Nav = () => {
     <div className="navbar">
       <div className="navbar-links">
         <div className="navbar-links_logo">
-          {/* <img src={logo} alt="logo" /> */}
-          <h1><Link to="/">CodeBox</Link></h1>
+          <img src={logo} alt="logo" />
+          {/* <h1><Link to="/">CodeBox</Link></h1> */}
         </div>
         <div className="navbar-links_container">
           <Menu />

@@ -60,7 +60,7 @@ const Submissions = () => {
             const filter = query.default+query.status+query.language+query.limit+query.sort+query.page;
             // console.log(filter);
             try {
-                const getTasks = await axios.get("http://127.0.0.1:5000/api/code/tasks"+filter, {
+                const getTasks = await axios.get("https://codebox-server.vercel.app/api/code/tasks"+filter, {
                     headers:{
                         authorization: "Bearer "+JSON.parse(localStorage.getItem("user")).token,
                     }

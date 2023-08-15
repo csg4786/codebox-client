@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./onboarding.css";
 import axios from "axios";
+import logo from "../../assets/codebox-low-resolution-logo-color-on-transparent-background1.png";
 
 const Onboarding = () => {
   const [cntr, setCntr] = useState(<div></div>);
@@ -56,7 +57,7 @@ const Onboarding = () => {
     e.preventDefault();
     try {
       if (registerDetails.password === registerDetails.password2) {
-        const res = await axios.post("http://127.0.0.1:5000/api/user/register", {
+        const res = await axios.post("https://codebox-server.vercel.app/api/user/register", {
           firstName: registerDetails.firstName,
           lastName: registerDetails.lastName,
           email: registerDetails.email,
@@ -101,7 +102,7 @@ const Onboarding = () => {
     e.preventDefault();
     
     try {
-      const res = await axios.post("http://127.0.0.1:5000/api/user/login", {
+      const res = await axios.post("https://codebox-server.vercel.app/api/user/login", {
         email: loginDetails.email2,
         password: loginDetails.password3,
       });
@@ -276,6 +277,9 @@ const Onboarding = () => {
         <div className="row content-row">
           {/* Sign-in Content */}
           <div className="col align-items-center flex-col">
+            <div className="img sign-in">
+              <img src={logo} alt="" />
+            </div>
             <div className="text sign-in">
               <h2>Welcome Back!</h2>
             </div>
@@ -285,10 +289,11 @@ const Onboarding = () => {
 
           {/* Sign-up Content */}
           <div className="col align-items-center flex-col">
-            <div className="img sign-up"></div>
+            <div className="img sign-up">
+              <img src={logo} alt="" />
+            </div>
             <div className="text sign-up">
-              <h2>Welcome!</h2>
-              <h2>Join us here</h2>
+              <h2>Welcome! Join us here</h2>
             </div>
           </div>
           {/* End of Sign-up Content */}

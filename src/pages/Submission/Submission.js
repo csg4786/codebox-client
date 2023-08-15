@@ -22,7 +22,7 @@ const Submission = () => {
 
     const getSub = async ()=> {
       try {
-        const res = await axios.get("http://127.0.0.1:5000/api/code/task/"+subId, {
+        const res = await axios.get("https://codebox-server.vercel.app/api/code/task/"+subId, {
           headers:{
             authorization: "Bearer "+JSON.parse(localStorage.getItem("user")).token,
           }

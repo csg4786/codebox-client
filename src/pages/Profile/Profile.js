@@ -33,7 +33,7 @@ const Profile = () => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 try {
-                    const res = await axios.patch("http://127.0.0.1:5000/api/user/update/"+user._id, detail, {
+                    const res = await axios.patch("https://codebox-server.vercel.app/api/user/update/"+user._id, detail, {
                         headers:{
                             authorization: "Bearer "+JSON.parse(localStorage.getItem("user")).token,
                         }
@@ -41,10 +41,10 @@ const Profile = () => {
                     if (res?.data?.status === "success") {
                         console.log(res)
                         user = {...user, 
-                            firstName: res.data.user.firstName,
-                            lastName: res.data.user.lastName,
-                            email: res.data.user.email,
-                            mobile: res.data.user.mobile,
+                            firstName: detail.firstName,
+                            lastName: detail.lastName,
+                            email: detail.email,
+                            mobile: detail.mobile,
                         }
                         localStorage.setItem("user", JSON.stringify(user));
                     }
